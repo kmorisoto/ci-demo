@@ -52,3 +52,5 @@ jobs:
       - store_artifacts:
           path: ~/junit
 
+      # run lint!
+      - run: gradle ktlint
