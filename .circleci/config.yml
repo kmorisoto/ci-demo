@@ -46,7 +46,7 @@ jobs:
           command: |
             mkdir -p ~/junit/
             find . -type f -regex ".*/build/test-results/.*xml" -exec cp {} ~/junit/ \;
-            cp -r app/build/reports/tests/ ~/junit/
+            find . -type d -regex ".*/build/reports/tests" -exec cp -r {} ~/junit/ \;
           when: always
       - store_test_results:
           path: ~/junit
